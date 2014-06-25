@@ -9,6 +9,7 @@ update_svn() {
 		svn co -q $SVN_URL $project_root
 	else
 		cd $project_root
+		svn upgrade # Hitting this a few times so just make sure its upgraded
 		#echo 'svn cleanup > /dev/null || true'
 		svn cleanup > /dev/null || true
 		#echo 'svn up'
