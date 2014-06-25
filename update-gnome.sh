@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 gnome_root="$data_root/gnome"
 
 mkdir -p $gnome_root

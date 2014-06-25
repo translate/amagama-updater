@@ -2,7 +2,7 @@
 
 # Some useful things hosted at Debian
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 GIT_URL=git://anonscm.debian.org/pkg-manpages-fr/manpages-fr-extra.git
 project_root="$data_root/debian-extra/manpages-fr-extra"

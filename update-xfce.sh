@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 xfce_root="$data_root/xfce"
 
 mkdir -p $xfce_root

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 ubuntu_root=$data_root/ubuntu
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 audacity_root="$data_root/audacity"
 

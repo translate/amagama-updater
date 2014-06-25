@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 GIT_URL=git://anongit.freedesktop.org/accountsservice
 project_root="$data_root/freedesktop/accountservice"

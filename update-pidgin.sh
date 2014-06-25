@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 HG_URL=http://hg.pidgin.im/pidgin/main
 project_root="$data_root/pidgin"

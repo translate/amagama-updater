@@ -2,7 +2,7 @@
 
 #OK, this is not really zaf any more, but the same data, just moved to github.
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 GIT_URL=git://github.com/translate/mozilla-l10n.git
 GIT_URL=https://github.com/translate/mozilla-l10n.git

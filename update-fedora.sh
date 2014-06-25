@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 fedora_root="$data_root/fedora"
 
 mkdir -p $fedora_root

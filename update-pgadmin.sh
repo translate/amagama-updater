@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 
 GIT_URL=git://git.postgresql.org/git/pgadmin3.git
 project_root="$data_root/pgadmin"

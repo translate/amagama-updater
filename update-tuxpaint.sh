@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 project_root="$data_root/tuxpaint"
 
 modules="tuxpaint/src/po tuxpaint-stamps/po tuxpaint-config/src/po tuxpaint-website/po"

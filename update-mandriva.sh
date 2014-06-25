@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. `dirname $0`/helpers
+. `dirname $0`/common.inc.sh
 mandriva_root="$data_root/mandriva"
 
 if [ ! -d $mandriva_root ]; then
