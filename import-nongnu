@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+    echo "Need to pass the data directory as parameter"
+    exit 1
+fi
+
+DIR=$1
+shift
+TAGS=$@
+
+maxjobs=8
+parallelize () {
+    while [ $# -gt 0 ]; do
+        count=(`jobs -p`)
+        if [ ${#count[@]} -lt $maxjobs ]; then
+	    echo $1
+	    ~/amagama/amagama/bin/amagama-manage build_tmdb -s en -t $1 -i $1  $TAGS &
+            shift
+	else
+	    sleep 1
+        fi
+    done
+    wait
+}
+
+#parallelize $DIR/?? $DIR/??? $DIR/??_?? $DIR/???_?? $DIR/???-?? $DIR/??-?? $DIR/??@*
+#parallelize $ALL
+
+pushd .
+cd $DIR
+parallelize ?? ??? ??_?? ???_?? ???-?? ??-?? ??@*
+popd

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+    echo "Need to pass the data directory as parameter"
+    exit 1
+fi
+
+DIR=$1
+shift
+TAGS=$@
+
+maxjobs=8
+parallelize () {
+    while [ $# -gt 0 ]; do
+        count=(`jobs -p`)
+        if [ ${#count[@]} -lt $maxjobs ]; then
+	    echo $1
+	    ~/amagama/amagama/bin/amagama-manage build_tmdb -s en -i $1  $TAGS &
+            shift
+	else
+	    sleep 1
+        fi
+    done
+    wait
+}
+
+#find -name \*.po -printf "%h\n" | sort -u | while read d;
+#do
+#	parallelize $d;
+#done
+parallelize `find $DIR -name \*.po -printf "%h\n" | sort -u `
