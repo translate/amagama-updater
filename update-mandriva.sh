@@ -3,11 +3,8 @@
 . `dirname $0`/common.inc.sh
 
 mandriva_root="$data_root/mandriva"
- 
-if [ ! -d $mandriva_root ]; then
-    mkdir $mandriva_root
-fi
 
+mkdir -p $mandriva_root
 cd $mandriva_root
 
 
