@@ -16,3 +16,7 @@ update_git
 GIT_URL=git://github.com/translate/mozilla-lang.git
 project_root="$data_root/zaf-po/mozilla-lang"
 update_git
+
+project_root="$data_root/zaf-po/mozilla-gaia"
+GIT_URL=git://github.com/translate/mozilla-gaia.git
+update_git
