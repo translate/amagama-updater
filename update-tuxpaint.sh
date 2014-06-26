@@ -1,29 +1,21 @@
 #!/bin/bash
 
 . `dirname $0`/common.inc.sh
-project_root="$data_root/tuxpaint"
 
-modules="tuxpaint/src/po tuxpaint-stamps/po tuxpaint-config/src/po tuxpaint-website/po"
+tuxpaint_root="$data_root/tuxpaint"
+CVSROOT=:pserver:anonymous@tuxpaint.cvs.sourceforge.net:/cvsroot/tuxpaint
 
-pushd .
+mkdir -p $tuxpaint_root
+cd $tuxpaint_root
 
-if [ ! -d $project_root ]; then
-	mkdir $project_root
-	cd $project_root
-#	echo "" | cvs -d:pserver:anonymous@tuxpaint.cvs.sourceforge.net:/cvsroot/tuxpaint login
-        for module in $modules; do
-		echo 'cvs -d:pserver:anonymous@tuxpaint.cvs.sourceforge.net:/cvsroot/tuxpaint co -P $module'
-		cvs -d:pserver:anonymous@tuxpaint.cvs.sourceforge.net:/cvsroot/tuxpaint co -P $module
-	done
-else
-	cd $project_root
-	for module in $modules; do
-		pushd . > /dev/null
-		echo "cvs up ($module)"
-		cd $module
-		cvs up
-		popd > /dev/null
-	done
-fi
+project_root="tuxpaint/src/po"
+update_cvs
 
-popd
+project_root="tuxpaint-stamps/po"
+update_cvs
+
+project_root="tuxpaint-config/src/po"
+update_cvs
+
+project_root="tuxpaint-website/po"
+update_cvs

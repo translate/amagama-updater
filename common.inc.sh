@@ -2,6 +2,20 @@
 
 data_root=`dirname $(readlink -e $0)`/${1:-data}
 
+
+update_cvs() {
+	echo -n ${project_root}...
+	if [ ! -d $project_root ]; then
+		cvs -d $CVSROOT co -P $project_root
+	else
+		pushd . > /dev/null
+		cd $project_root
+		cvs up
+		popd > /dev/null
+	fi
+	echo done
+}
+
 update_svn() {
 	echo -n ${project_root}...
 	if [ ! -d $project_root ]; then
