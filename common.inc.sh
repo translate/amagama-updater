@@ -21,10 +21,12 @@ update_svn() {
 	if [ ! -d $project_root ]; then
 		svn co -q $SVN_URL $project_root
 	else
+		pushd . > /dev/null
 		cd $project_root
 		svn up -q  # Hitting this a few times so just make sure its upgraded
 		svn cleanup > /dev/null || true
 		svn up -q
+		popd > /dev/null
 	fi
 	echo done
 }
