@@ -5,7 +5,6 @@
 . `dirname $0`/common.inc.sh
 
 GIT_URL=git://github.com/translate/mozilla-l10n.git
-GIT_URL=https://github.com/translate/mozilla-l10n.git
 project_root="$data_root/zaf-po/mozilla-l10n"
 update_git
 
@@ -15,6 +14,5 @@ update_git
 #update_git
 
 GIT_URL=git://github.com/translate/mozilla-lang.git
-GIT_URL=https://github.com/translate/mozilla-lang.git
 project_root="$data_root/zaf-po/mozilla-lang"
 update_git
