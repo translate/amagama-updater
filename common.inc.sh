@@ -46,11 +46,11 @@ update_bzr() {
 update_hg() {
 	echo -n ${project_root}...
 	if [ ! -d $project_root ]; then
-		hg clone -q $HG_URL $project_root > /dev/null
+		hg clone -q $HG_URL $project_root
 	else
 		pushd . > /dev/null
 		cd $project_root
-		hg pull -u -q > /dev/null
+		hg pull -u -q
 		popd > /dev/null
 	fi
 	echo done
@@ -59,11 +59,11 @@ update_hg() {
 update_git() {
 	echo -n ${project_root}...
 	if [ ! -d $project_root ]; then
-		git clone -q $GIT_URL $project_root > /dev/null
+		git clone -q $GIT_URL $project_root
 	else
 		pushd . > /dev/null
 		cd $project_root
-		git pull --rebase -q > /dev/null
+		git pull --rebase -q
 		popd > /dev/null
 	fi
 	echo done
