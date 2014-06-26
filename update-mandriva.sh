@@ -8,77 +8,235 @@ mkdir -p $mandriva_root
 cd $mandriva_root
 
 
-svn_co () {
-    if [[ -d "$mandriva_root/$2" ]]; then
-    	echo -n "up $2..."
-    	svn up "$mandriva_root/$2" > /dev/null || true
-    	echo "done."
-    else
-    	echo -n "co $2..."
-    	svn co $1 $2 > /dev/null || true
-    	echo "done."
-    fi
-}
+project_root="$mandriva_root/DrakX"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakx/trunk/perl-install/install/share/po
+update_svn
+
+project_root="$mandriva_root/libDrakX"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakx/trunk/perl-install/share/po
+update_svn
+
+project_root="$mandriva_root/libDrakX-standalone"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakx/trunk/perl-install/standalone/po
+update_svn
 
 
-URL=http://svn.mandriva.com/svn/soft/
-DRAKX_URL=$URL/drakx/trunk/perl-install/
+project_root="$mandriva_root/control-center"
+SVN_URL=http://svn.mandriva.com/svn/soft/control-center/trunk/po
+update_svn
 
-svn_co $DRAKX_URL/install/share/po DrakX
-svn_co $DRAKX_URL/share/po libDrakX
-svn_co $DRAKX_URL/standalone/po libDrakX-standalone
-svn_co $URL/control-center/trunk/po control-center
-svn_co $URL/doc_isos/po doc_isos
-svn_co $URL/drak3d/trunk/po drak3d
-svn_co $URL/drakbackup/trunk/po drakbackup
-svn_co $URL/drakbt/trunk/po drakbt
-svn_co $URL/drakfax/trunk/po drakfax
-svn_co $URL/drakguard/trunk/po drakguard
-svn_co $URL/draklive-install/trunk/po draklive-install
-svn_co $URL/draklive-resize/trunk/po draklive-resize
-svn_co $URL/drakmenustyle/trunk/po drakmenustyle
-svn_co $URL/drakmsync/trunk/po drakmsync
-svn_co $URL/drakoo/trunk/po drakoo
-svn_co $URL/draksnapshot/trunk/po draksnapshot
-svn_co $URL/drakstats/trunk/po drakstats
-svn_co $URL/draktermserv/trunk/po draktermserv
-svn_co $URL/drakvirt/trunk/po drakvirt
-svn_co $URL/drakwizard/trunk/po drakwizard
-svn_co $URL/drakx-kbd-mouse-x11/trunk/po drakx-kbd-mouse-x11
-svn_co $URL/drakx-net/trunk/po network-tools
-svn_co $URL/external-l10n/trunk/kcm_touchpad/po kcm_touchpad
-svn_co $URL/ftw/trunk/po drakfirstboot
-svn_co $URL/ftw-web/trunk/po ftw-web
-svn_co $URL/GtkMdkWidgets/trunk/po gtkmdkwidgets
-svn_co $URL/hcl/trunk/po hcl
-svn_co $URL/indexhtml/trunk/about/po/ indexhtml
-svn_co $URL/initscripts/trunk/mandriva/po initscripts
-svn_co $URL/kde4-splash-mdv/trunk/po/ kde4-splash-mdv
-svn_co $URL/mandriva-galaxy-data/trunk/po mandriva-galaxy-data
-svn_co $URL/mandriva-galaxy-kde4/trunk/po mandriva-galaxy-kde4
-svn_co $URL/mandriva-kde-translation/trunk/po mandriva-kde-translation
-svn_co $URL/mdkhtmlbrowser/trunk/po mdkhtmlbrowser
-svn_co $URL/mdkonline/trunk/po mdkonline
-svn_co $URL/menu-messages/trunk/contrib menu-contrib
-svn_co $URL/menu-messages/trunk/main menu-main
-svn_co $URL/menu-messages/trunk/non-free menu-non-free
-svn_co $URL/msec/trunk/po msec
-svn_co $URL/nepomuk/ginkgo/po nepomuk-ginkgo
-svn_co $URL/nepomuk/khtml_nepomuk_task_linker nepomuk-tasklinker
-svn_co $URL/nepomuk/nepomuksmartfilemodule nepomuk-smartfilemodule
-svn_co $URL/nepomuk/plasma_applet_nepomukcontextchooser nepomuk-contextchooser
-svn_co $URL/nepomuk/scribo_opencalaistextmatchplugin nepomuk-scribo
-svn_co $URL/nepomuk/tasktop nepomuk-tasktop
-svn_co $URL/park-rpmdrake/trunk/po park-rpmdrake
-svn_co $URL/printerdrake/trunk/po printerdrake
-svn_co $URL/rfbdrake/trunk/po rfbdrake
-svn_co $URL/rpmdrake/trunk/po rpmdrake
-svn_co $URL/rpm-summary/trunk/rpm-summary-contrib rpm-summary-contrib
-svn_co $URL/rpm-summary/trunk/rpm-summary-devel rpm-summary-devel
-svn_co $URL/rpm-summary/trunk/rpm-summary-main rpm-summary-main
-svn_co $URL/rpm-summary/trunk/rpm-summary-non-free rpm-summary-non-free
-svn_co $URL/system-config-printer/po system-config-printer
-svn_co $URL/rpm/urpmi/trunk/po urpmi
-svn_co $URL/theme/mandriva-gfxboot-theme/trunk/po mandriva-gfxboot-theme
-svn_co $URL/transfugdrake/trunk/po transfugdrake
-svn_co $URL/userdrake2/trunk/po userdrake2
+project_root="$mandriva_root/doc_isos"
+SVN_URL=http://svn.mandriva.com/svn/soft/doc_isos/po
+update_svn
+
+project_root="$mandriva_root/drak3d"
+SVN_URL=http://svn.mandriva.com/svn/soft/drak3d/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakbackup"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakbackup/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakbt"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakbt/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakfax"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakfax/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakguard"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakguard/trunk/po
+update_svn
+
+project_root="$mandriva_root/draklive-install"
+SVN_URL=http://svn.mandriva.com/svn/soft/draklive-install/trunk/po
+update_svn
+
+project_root="$mandriva_root/draklive-resize"
+SVN_URL=http://svn.mandriva.com/svn/soft/draklive-resize/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakmenustyle"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakmenustyle/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakmsync"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakmsync/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakoo"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakoo/trunk/po
+update_svn
+
+project_root="$mandriva_root/draksnapshot"
+SVN_URL=http://svn.mandriva.com/svn/soft/draksnapshot/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakstats"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakstats/trunk/po
+update_svn
+
+project_root="$mandriva_root/draktermserv"
+SVN_URL=http://svn.mandriva.com/svn/soft/draktermserv/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakvirt"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakvirt/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakwizard"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakwizard/trunk/po
+update_svn
+
+project_root="$mandriva_root/drakx-kbd-mouse-x11"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakx-kbd-mouse-x11/trunk/po
+update_svn
+
+project_root="$mandriva_root/network-tools"
+SVN_URL=http://svn.mandriva.com/svn/soft/drakx-net/trunk/po
+update_svn
+
+project_root="$mandriva_root/kcm_touchpad"
+SVN_URL=http://svn.mandriva.com/svn/soft/external-l10n/trunk/kcm_touchpad/po
+update_svn
+
+project_root="$mandriva_root/drakfirstboot"
+SVN_URL=http://svn.mandriva.com/svn/soft/ftw/trunk/po
+update_svn
+
+project_root="$mandriva_root/ftw-web"
+SVN_URL=http://svn.mandriva.com/svn/soft/ftw-web/trunk/po
+update_svn
+
+project_root="$mandriva_root/gtkmdkwidgets"
+SVN_URL=http://svn.mandriva.com/svn/soft/GtkMdkWidgets/trunk/po
+update_svn
+
+project_root="$mandriva_root/hcl"
+SVN_URL=http://svn.mandriva.com/svn/soft/hcl/trunk/po
+update_svn
+
+project_root="$mandriva_root/indexhtml"
+SVN_URL=http://svn.mandriva.com/svn/soft/indexhtml/trunk/about/po/
+update_svn
+
+project_root="$mandriva_root/initscripts"
+SVN_URL=http://svn.mandriva.com/svn/soft/initscripts/trunk/mandriva/po
+update_svn
+
+project_root="$mandriva_root/kde4-splash-mdv"
+SVN_URL=http://svn.mandriva.com/svn/soft/kde4-splash-mdv/trunk/po/
+update_svn
+
+project_root="$mandriva_root/mandriva-galaxy-data"
+SVN_URL=http://svn.mandriva.com/svn/soft/mandriva-galaxy-data/trunk/po
+update_svn
+
+project_root="$mandriva_root/mandriva-galaxy-kde4"
+SVN_URL=http://svn.mandriva.com/svn/soft/mandriva-galaxy-kde4/trunk/po
+update_svn
+
+project_root="$mandriva_root/mandriva-kde-translation"
+SVN_URL=http://svn.mandriva.com/svn/soft/mandriva-kde-translation/trunk/po
+update_svn
+
+project_root="$mandriva_root/mdkhtmlbrowser"
+SVN_URL=http://svn.mandriva.com/svn/soft/mdkhtmlbrowser/trunk/po
+update_svn
+
+project_root="$mandriva_root/mdkonline"
+SVN_URL=http://svn.mandriva.com/svn/soft/mdkonline/trunk/po
+update_svn
+
+project_root="$mandriva_root/menu-contrib"
+SVN_URL=http://svn.mandriva.com/svn/soft/menu-messages/trunk/contrib
+update_svn
+
+project_root="$mandriva_root/menu-main"
+SVN_URL=http://svn.mandriva.com/svn/soft/menu-messages/trunk/main
+update_svn
+
+project_root="$mandriva_root/menu-non-free"
+SVN_URL=http://svn.mandriva.com/svn/soft/menu-messages/trunk/non-free
+update_svn
+
+project_root="$mandriva_root/msec"
+SVN_URL=http://svn.mandriva.com/svn/soft/msec/trunk/po
+update_svn
+
+project_root="$mandriva_root/nepomuk-ginkgo"
+SVN_URL=http://svn.mandriva.com/svn/soft/nepomuk/ginkgo/po
+update_svn
+
+project_root="$mandriva_root/nepomuk-tasklinker"
+SVN_URL=http://svn.mandriva.com/svn/soft/nepomuk/khtml_nepomuk_task_linker
+update_svn
+
+project_root="$mandriva_root/nepomuk-smartfilemodule"
+SVN_URL=http://svn.mandriva.com/svn/soft/nepomuk/nepomuksmartfilemodule
+update_svn
+
+project_root="$mandriva_root/nepomuk-contextchooser"
+SVN_URL=http://svn.mandriva.com/svn/soft/nepomuk/plasma_applet_nepomukcontextchooser
+update_svn
+
+project_root="$mandriva_root/nepomuk-scribo"
+SVN_URL=http://svn.mandriva.com/svn/soft/nepomuk/scribo_opencalaistextmatchplugin
+update_svn
+
+project_root="$mandriva_root/nepomuk-tasktop"
+SVN_URL=http://svn.mandriva.com/svn/soft/nepomuk/tasktop
+update_svn
+
+project_root="$mandriva_root/park-rpmdrake"
+SVN_URL=http://svn.mandriva.com/svn/soft/park-rpmdrake/trunk/po
+update_svn
+
+project_root="$mandriva_root/printerdrake"
+SVN_URL=http://svn.mandriva.com/svn/soft/printerdrake/trunk/po
+update_svn
+
+project_root="$mandriva_root/rfbdrake"
+SVN_URL=http://svn.mandriva.com/svn/soft/rfbdrake/trunk/po
+update_svn
+
+project_root="$mandriva_root/rpmdrake"
+SVN_URL=http://svn.mandriva.com/svn/soft/rpmdrake/trunk/po
+update_svn
+
+project_root="$mandriva_root/rpm-summary-contrib"
+SVN_URL=http://svn.mandriva.com/svn/soft/rpm-summary/trunk/rpm-summary-contrib
+update_svn
+
+project_root="$mandriva_root/rpm-summary-devel"
+SVN_URL=http://svn.mandriva.com/svn/soft/rpm-summary/trunk/rpm-summary-devel
+update_svn
+
+project_root="$mandriva_root/rpm-summary-main"
+SVN_URL=http://svn.mandriva.com/svn/soft/rpm-summary/trunk/rpm-summary-main
+update_svn
+
+project_root="$mandriva_root/rpm-summary-non-free"
+SVN_URL=http://svn.mandriva.com/svn/soft/rpm-summary/trunk/rpm-summary-non-free
+update_svn
+
+project_root="$mandriva_root/system-config-printer"
+SVN_URL=http://svn.mandriva.com/svn/soft/system-config-printer/po
+update_svn
+
+project_root="$mandriva_root/urpmi"
+SVN_URL=http://svn.mandriva.com/svn/soft/rpm/urpmi/trunk/po
+update_svn
+
+project_root="$mandriva_root/mandriva-gfxboot-theme"
+SVN_URL=http://svn.mandriva.com/svn/soft/theme/mandriva-gfxboot-theme/trunk/po
+update_svn
+
+project_root="$mandriva_root/transfugdrake"
+SVN_URL=http://svn.mandriva.com/svn/soft/transfugdrake/trunk/po
+update_svn
+
+project_root="$mandriva_root/userdrake2"
+SVN_URL=http://svn.mandriva.com/svn/soft/userdrake2/trunk/po
+update_svn
