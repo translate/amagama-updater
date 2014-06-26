@@ -4,17 +4,17 @@
 
 . `dirname $0`/common.inc.sh
 
-GIT_URL=git://github.com/translate/mozilla-l10n.git
 project_root="$data_root/zaf-po/mozilla-l10n"
+GIT_URL=git://github.com/translate/mozilla-l10n.git
 update_git
 
 #deprecated:
-#GIT_URL=git://github.com/translate/mozilla-com.git
 #project_root="$data_root/zaf-po/mozilla-com"
+#GIT_URL=git://github.com/translate/mozilla-com.git
 #update_git
 
-GIT_URL=git://github.com/translate/mozilla-lang.git
 project_root="$data_root/zaf-po/mozilla-lang"
+GIT_URL=git://github.com/translate/mozilla-lang.git
 update_git
 
 project_root="$data_root/zaf-po/mozilla-gaia"

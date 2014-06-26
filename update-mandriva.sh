@@ -1,8 +1,9 @@
 #!/bin/bash
 
 . `dirname $0`/common.inc.sh
-mandriva_root="$data_root/mandriva"
 
+mandriva_root="$data_root/mandriva"
+ 
 if [ ! -d $mandriva_root ]; then
     mkdir $mandriva_root
 fi
@@ -13,12 +14,12 @@ cd $mandriva_root
 svn_co () {
     if [[ -d "$mandriva_root/$2" ]]; then
     	echo -n "up $2..."
-	svn up "$mandriva_root/$2" > /dev/null || true
-	echo "done."
+    	svn up "$mandriva_root/$2" > /dev/null || true
+    	echo "done."
     else
     	echo -n "co $2..."
-	svn co $1 $2 > /dev/null || true
-	echo "done."
+    	svn co $1 $2 > /dev/null || true
+    	echo "done."
     fi
 }
 

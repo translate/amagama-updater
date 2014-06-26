@@ -19,14 +19,11 @@ update_cvs() {
 update_svn() {
 	echo -n ${project_root}...
 	if [ ! -d $project_root ]; then
-		#echo "svn co $SVN_URL $project_root"
 		svn co -q $SVN_URL $project_root
 	else
 		cd $project_root
 		svn upgrade # Hitting this a few times so just make sure its upgraded
-		#echo 'svn cleanup > /dev/null || true'
 		svn cleanup > /dev/null || true
-		#echo 'svn up'
 		svn up -q
 	fi
 	echo done
@@ -49,7 +46,6 @@ update_bzr() {
 update_hg() {
 	echo -n ${project_root}...
 	if [ ! -d $project_root ]; then
-		#echo "hg clone $HG_URL $project_root"
 		hg clone -q $HG_URL $project_root > /dev/null
 	else
 		pushd . > /dev/null
@@ -63,7 +59,6 @@ update_hg() {
 update_git() {
 	echo -n ${project_root}...
 	if [ ! -d $project_root ]; then
-		#echo "git clone $GIT_URL $project_root"
 		git clone -q $GIT_URL $project_root > /dev/null
 	else
 		pushd . > /dev/null
@@ -73,4 +68,3 @@ update_git() {
 	fi
 	echo done
 }
-

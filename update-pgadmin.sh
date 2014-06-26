@@ -2,9 +2,10 @@
 
 . `dirname $0`/common.inc.sh
 
-GIT_URL=git://git.postgresql.org/git/pgadmin3.git
 project_root="$data_root/pgadmin"
+GIT_URL=git://git.postgresql.org/git/pgadmin3.git
 update_git
-GIT_URL=git://git.postgresql.org/git/pgadmin-www.git
+
 project_root="$data_root/pgadmin-www"
+GIT_URL=git://git.postgresql.org/git/pgadmin-www.git
 update_git

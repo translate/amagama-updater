@@ -26,7 +26,6 @@ project_root="$ubuntu_root/roundcubemail"
 BZR_URL=lp:roundcubemail
 update_bzr
 
-#mozilla style:
 project_root="$ubuntu_root/evergreen"
 BZR_URL=lp:~denials/evergreen/translation-export
 update_bzr

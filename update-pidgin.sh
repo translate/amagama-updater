@@ -2,6 +2,6 @@
 
 . `dirname $0`/common.inc.sh
 
-HG_URL=http://hg.pidgin.im/pidgin/main
 project_root="$data_root/pidgin"
+HG_URL=http://hg.pidgin.im/pidgin/main
 update_hg

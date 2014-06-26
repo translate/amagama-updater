@@ -1,10 +1,10 @@
 #!/bin/bash
 
 . `dirname $0`/common.inc.sh
+
 gnome_root="$data_root/gnome"
 
 mkdir -p $gnome_root
-
 cd $gnome_root
 
 xmodules=`wget -o /dev/null --no-proxy -O- http://git.gnome.org | grep 'sublevel-repo[^~]*$' | sed "s/^.*href='\([^']*\)'.*$/\1/"`

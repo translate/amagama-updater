@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . `dirname $0`/common.inc.sh
+
 project_root="$data_root/translationproject"
 
 if [ ! -d $project_root ]; then
@@ -8,7 +9,6 @@ if [ ! -d $project_root ]; then
 fi
 
 
-pushd .
 cd $project_root
 wget --mirror --no-parent http://translationproject.org/latest/
-popd
+cd $data_root
