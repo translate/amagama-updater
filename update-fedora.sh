@@ -5,11 +5,11 @@
 fedora_root="$data_root/fedora"
 
 mkdir -p $fedora_root
+cd $fedora_root
 
 do_stuff () {
     for m in $@; do
         dir=`echo $m | sed 's/\/cgit\/\(.*\)\/tree\/$/\1/'`
-        cd $fedora_root
         GIT_URL=git://git.fedorahosted.org/$dir
         project_root=$dir
         update_git
