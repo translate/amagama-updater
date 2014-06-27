@@ -7,7 +7,7 @@ xfce_root="$data_root/xfce"
 mkdir -p $xfce_root
 cd $xfce_root
 
-xmodules=`wget -o /dev/null -O- http://git.xfce.org | grep 'sublevel-repo[^~]*$' | sed "s/^.*href='\([^']*\)'.*$/\1/"`
+xmodules=`wget -o /dev/null --no-proxy -O- http://git.xfce.org | grep 'sublevel-repo[^~]*$' | sed "s/^.*href='\([^']*\)'.*$/\1/"`
 
 for m in $xmodules; do
 	project_root=`echo $m | sed 's/.*\/\(.*\)\/$/\1/'`
