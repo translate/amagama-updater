@@ -4,4 +4,4 @@
 
 project_root="$data_root/translationproject"
 
-wget --mirror --no-parent -accept="*.po" -P $project_root http://translationproject.org/latest/
+wget --mirror --no-parent -q -accept="*.po" -P $project_root http://translationproject.org/latest/
