@@ -6,7 +6,6 @@ debian_root="$data_root/debian"
 debian_download="$data_root/debian-download"
 
 mkdir -p $debian_root
-mkdir -p $debian_download
 
 #wget --mirror --no-parent --reject=*-stamp*.po -P $debian_download  http://i18n.debian.net/compendia/po/
 
