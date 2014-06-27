@@ -13,5 +13,5 @@ pushd .
 popd
 
 find $debian_root-download/i18n.debian.net/compendia/po -name compendium-*.po| while read i; do
-    msggrep -v --msgid -e '#-#-#-' $i > $debian_root/`basename $i`
+	msggrep -v --msgid -e '#-#-#-' $i > $debian_root/`basename $i`
 done
