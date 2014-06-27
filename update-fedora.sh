@@ -15,10 +15,7 @@ do_stuff () {
 	done
 }
 
-modules=`wget --no-proxy -o /dev/null -O- 'http://git.fedorahosted.org/cgit/?s=idle' | grep 'level-repo[^~]*$' | sed "s/^.*href='\([^']*\)'.*$/\1/"`
-do_stuff $modules
-
-for offset in `seq 50 50 400`; do
+for offset in `seq 0 50 400`; do
 	modules=`wget --no-proxy -o /dev/null -O- 'http://git.fedorahosted.org/cgit/?s=idle&ofs='$offset | grep 'level-repo[^~]*$' | sed "s/^.*href='\([^']*\)'.*$/\1/"`
 	do_stuff $modules
 done
