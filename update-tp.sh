@@ -5,6 +5,4 @@
 project_root="$data_root/translationproject"
 
 mkdir -p $project_root
-cd $project_root
-wget --mirror --no-parent http://translationproject.org/latest/
-cd $data_root
+wget --mirror --no-parent -P $project_root http://translationproject.org/latest/
