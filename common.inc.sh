@@ -1,6 +1,6 @@
 #!/bin/bash
 
-data_root=`dirname $(readlink -e $0)`/${1:-data}
+data_root=$(dirname $0)/${1:-data}
 
 
 update_cvs() {
