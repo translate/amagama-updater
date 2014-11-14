@@ -16,7 +16,7 @@ update_cvs() {
 
 update_svn() {
 	if [ ! -d $project_root ]; then
-		svn co -q $SVN_URL $project_root
+		svn co -q $vcs_url $project_root
 	else
 		pushd . > /dev/null
 		cd $project_root
@@ -30,7 +30,7 @@ update_svn() {
 update_bzr() {
 	if [ ! -d $project_root ]; then
 		cd $data_root
-		bzr branch -q $BZR_URL $project_root
+		bzr branch -q $vcs_url $project_root
 	else
 		pushd . > /dev/null
 		cd $project_root
@@ -41,7 +41,7 @@ update_bzr() {
 
 update_hg() {
 	if [ ! -d $project_root ]; then
-		hg clone -q $HG_URL $project_root
+		hg clone -q $vcs_url $project_root
 	else
 		pushd . > /dev/null
 		cd $project_root
@@ -52,11 +52,23 @@ update_hg() {
 
 update_git() {
 	if [ ! -d $project_root ]; then
-		git clone -q $GIT_URL $project_root
+		git clone -q $vcs_url $project_root
 	else
 		pushd . > /dev/null
 		cd $project_root
 		git pull --rebase -q
 		popd > /dev/null
 	fi
+}
+
+_split_repo() {
+	vcs_type=$(echo $repo | cut -d"+" -f1)
+	vcs_url=$(echo $repo | cut -d"+" -f2)
+}
+
+update() {
+	_split_repo
+	echo $project
+	project_root=$data_root/$project
+	update_$vcs_type
 }
