@@ -75,7 +75,6 @@ update() {
 			echo "- ${subproject[index]}"
 			project_root=$data_root/$project/${subproject[index]}
 			_split_repo ${repo[index]}
-			echo $vcs_url
 			update_$vcs_type
 		done
 	else
