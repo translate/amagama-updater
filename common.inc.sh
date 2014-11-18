@@ -69,7 +69,7 @@ _split_repo() {
 
 update() {
 	echo $project
-	if [[ ${#subproject[@]} ]]; then
+	if [[ ${#subproject[@]} -gt 0 ]]; then
 		for index in $(seq 0 $((${#subproject[@]} - 1)))
 		do
 			echo "- ${subproject[index]}"
