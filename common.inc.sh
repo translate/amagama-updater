@@ -1,6 +1,6 @@
 #!/bin/bash
 
-data_root=$(dirname $0)/${1:-data}
+data_root=$(dirname $0)/data
 
 
 update_cvs() {
