@@ -12,7 +12,12 @@ if [[ $# == 0 ]]; then
 else
 	for project in $*
 	do
-		projects="$projects conf/${project}.sh"
+		if [[ -f conf/${project}.sh ]]; then
+			projects="$projects conf/${project}.sh"
+		else
+			echo "Error: project '$project' does not exist, missing configuration file conf/${project}.sh"
+			exit 1
+		fi
 	done
 fi
 
