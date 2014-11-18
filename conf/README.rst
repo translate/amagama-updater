@@ -66,9 +66,21 @@ In cases where amagama and upstream codes do not match then we need to remap the
 
     language_mapping=fr-FR:fr hy-AM:hy hi-IN:hi
 
+translation_dirs
+---------------
+The directories that contain the translations we want to use. By default we
+assume the checkout dir.::
+
+    translation_dirs=path/to/translations
+    translation_dirs=path/to/translations another-path/to/translations
+
+    translation_dirs=po
+    translation_dirs=code/po website
+
 
 Others
 ------
 * Special handling of imports
 * Processes e.g. moz2po to execute before import
 * Cleanups
+* Prep scripts, we have some wget like snippets that are run to find the actual upstream Git repos
