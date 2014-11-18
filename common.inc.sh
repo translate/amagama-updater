@@ -62,23 +62,25 @@ update_git() {
 }
 
 _split_repo() {
-	vcs_type=$(echo $repo | cut -d"+" -f1)
-	vcs_url=$(echo $repo | cut -d"+" -f2)
+	# $1 is the repo string
+	vcs_type=$(echo $1o | cut -d"+" -f1)
+	vcs_url=$(echo $1 | cut -d"+" -f2)
 }
 
 update() {
 	echo $project
-	if [[ $subproject ]]; then
-		for subproj in ${subproject[*]}
+	if [[ ${#subproject[@]} ]]; then
+		for index in $(seq 0 $((${#subproject[@]} - 1)))
 		do
-			echo "- $subproj"
-			project_root=$data_root/$project/$subproj
-			_split_repo
+			echo "- ${subproject[index]}"
+			project_root=$data_root/$project/${subproject[index]}
+			_split_repo ${repo[index]}
+			echo $vcs_url
 			update_$vcs_type
 		done
 	else
 		project_root=$data_root/$project
-		_split_repo
+		_split_repo $repo
 		update_$vcs_type
 	fi
 }
