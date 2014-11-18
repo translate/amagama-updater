@@ -41,3 +41,29 @@ One of ``gnu`` or ``nongnu``.  The tells the system where the layout is as follo
          br/some.po
          .....
          zu/some.po
+
+Not implemented yet ideas
+=========================
+
+include and exclude
+-------------------
+Include and exclude specific languages from the import.::
+
+    include=af zu
+    exclude=es fr
+
+language_mapping
+----------------
+In cases where amagama and upstream codes do not match then we need to remap them.::
+
+    language_mapping=<from>:<to>
+    language_mapping=<checkout>:<amagama>
+
+    language_mapping=fr-FR:fr hy-AM:hy hi-IN:hi
+
+
+Others
+------
+* Special handling of imports
+* Processes e.g. moz2po to execute before import
+* Cleanups
