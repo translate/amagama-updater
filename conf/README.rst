@@ -85,3 +85,4 @@ Others
 * Cleanups
 * Prep scripts, we have some wget like snippets that are run to find the actual upstream Git repos
 * How to checkout branches e.g. FxOS 2.0, 2.1, etc
+* Dealing with e.g. tuxpaint-stamps-ach.po i.e. need to remove the first bit to find the language.
