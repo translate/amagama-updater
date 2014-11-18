@@ -68,15 +68,16 @@ _split_repo() {
 
 update() {
 	echo $project
-	project_root=$data_root/$project
 	if [[ $subproject ]]; then
 		for subproj in ${subproject[*]}
 		do
 			echo "- $subproj"
+			project_root=$data_root/$project/$subproj
 			_split_repo
 			update_$vcs_type
 		done
 	else
+		project_root=$data_root/$project
 		_split_repo
 		update_$vcs_type
 	fi
