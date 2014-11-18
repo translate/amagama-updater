@@ -5,7 +5,7 @@ data_root=$(dirname $0)/data
 
 update_cvs() {
 	if [ ! -d $project_root ]; then
-		cvs -Q -d $CVSROOT co -P $project_root
+		cvs -Q -d $cvs_root co -P $vcs_url
 	else
 		pushd . > /dev/null
 		cd $project_root
