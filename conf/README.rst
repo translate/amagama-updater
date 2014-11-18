@@ -1,3 +1,4 @@
+===================
 Configuration files
 ===================
 
@@ -11,6 +12,10 @@ code-block:: bash
    project=dummy
    repo=vcs_system+vcs_url
    layout=gnu
+
+
+Configuration options
+=====================
 
 project
 -------
