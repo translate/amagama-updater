@@ -31,7 +31,24 @@ Thus::
 
   repo=git+git://someurl.com/translations
 
+  repo=git+git://someurl.com/translations/<iterator>
+
+
 Will make use of Git to checkout the data from ``git://someurl.com/translations``
+
+iterator
+--------
+The iterator must return a list of possible repos or repo snippets.  Combined
+with the <iterator> form of ``repo`` they create VCS urls that are retreived
+one by one.
+
+The iterator can we a list or some bash commands.::
+
+    iterator=one two three
+    repo=git+git://someserver.com/somepath/<iterator>
+
+    iterator=$(custom function)
+
 
 layout
 ------

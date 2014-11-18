@@ -81,6 +81,14 @@ update() {
 			_split_repo ${repo[index]}
 			update_$vcs_type
 		done
+	elif [[ $iterator ]]; then
+		for iter in $iterator
+		do
+			echo "- $iter"
+			project_root=$data_root/$project/$iter
+			_split_repo $(echo $repo | sed "s#<iterator>#$iter#")
+			update_$vcs_type
+		done
 	else
 		project_root=$data_root/$project
 		_split_repo $repo
