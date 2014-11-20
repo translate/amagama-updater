@@ -25,7 +25,6 @@ update_svn() {
 		pushd . > /dev/null
 		cd $project_root
 		svn cleanup > /dev/null || true
-		svn up -q  # Hitting this a few times so just make sure its upgraded
 		svn up -q
 		popd > /dev/null
 	fi
