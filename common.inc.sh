@@ -32,7 +32,7 @@ update_svn() {
 
 update_bzr() {
 	if [ ! -d $project_root ]; then
-		cd $data_root
+		mkdir -p $(dirname $project_root)
 		bzr branch -q $vcs_url $project_root
 	else
 		pushd . > /dev/null
