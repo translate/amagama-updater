@@ -141,7 +141,7 @@ import_nongnu() {
 		echo "Error: missing directory '$1'"
 		return
 	fi
-	amagama_loader $(find $1 -type d -depth 1 -print | sort -u)
+	amagama_loader $(find $1 -maxdepth 1 -mindepth 1 -type d -print | sort -u)
 }
 
 import_project() {
