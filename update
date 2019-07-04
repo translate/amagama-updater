@@ -27,6 +27,6 @@ do
 	repo=""
 	translation_dirs=""
 	subproject=()
-	source $project
-	update
+	source $project  \
+		&&  update
 done
