@@ -151,6 +151,10 @@ import_project() {
 	if [[ $translation_dirs ]]; then
 		for translation_dir in $translation_dirs
 		do
+			if [[ ! -d $project_root/$translation_dir ]]; then
+				echo "$project_root/$translation_dir doesn't exist!" > /dev/stderr
+				continue
+			fi
 			if [[ $layout == "gnu" ]]; then
 				import_gnu $project_root/$translation_dir
 			else
