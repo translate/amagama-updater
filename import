@@ -24,6 +24,10 @@ fi
 
 for project in $projects
 do
+	iterator=""
+	repo=""
+	translation_dirs=()
+	subproject=()
 	source $project
 	import
 done
