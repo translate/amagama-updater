@@ -180,7 +180,7 @@ import() {
 		do
 			echo "- $iter"
 			project_root=$data_root/$project/$iter
-			import_project $layput $translation_dirs
+			import_project $layout $translation_dirs
 		done
 	else
 		project_root=$data_root/$project
