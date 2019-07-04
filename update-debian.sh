@@ -7,7 +7,7 @@ debian_download="$data_root/debian-download"
 
 mkdir -p $debian_root
 
-wget --mirror --no-parent --reject=*-stamp*.po -P $debian_download  http://i18n.debian.net/compendia/
+wget --mirror --no-parent --reject=*-stamp*.po -P $debian_download  https://i18n.debian.org/compendia/
 
 compendia=`find $debian_download/i18n.debian.net/compendia/po -name compendium-*.po`
 for i in $compendia; do

@@ -1,3 +1,3 @@
 project=tortoisesvn
-repo=svn+http://tortoisesvn.googlecode.com/svn/trunk/Languages/
+repo=svn+http://svn.osdn.net/svnroot/tortoisesvn/trunk/Languages/
 layout=nongnu

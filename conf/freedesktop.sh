@@ -66,6 +66,6 @@ layout[12]=gnu
 translation_dirs[12]=po
 
 subproject[13]=udisks
-repo[13]=git+git://anongit.freedesktop.org/udisks
+repo[13]=git+https://github.com/storaged-project/udisks
 layout[13]=gnu
 translation_dirs[13]=po

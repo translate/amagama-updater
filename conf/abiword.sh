@@ -1,4 +1,4 @@
 project=abiword
-repo=svn+http://svn.abisource.com/abiword/trunk/po 
+repo=git+git://gitlab.gnome.org/World/AbiWord.git
 layout=gnu
 language_mapping=af-ZA:af

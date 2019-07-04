@@ -1,4 +1,4 @@
 project=pidgin
-repo=hg+http://hg.pidgin.im/pidgin/main
+repo=hg+https://bitbucket.org/pidgin/main
 layout=gnu
 translation_dirs=po
